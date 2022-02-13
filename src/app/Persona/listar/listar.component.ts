@@ -17,4 +17,8 @@ export class ListarComponent implements OnInit {
       this.personas = data;
     });
   }
+
+  deleteUser(id: number){    
+    this.service.deleteUser(id).subscribe();    
+  }
 }
