@@ -15,10 +15,9 @@ export class AppComponent {
   }
 
   listar(){
-    this.router.navigate(["listar"])
+    this.router.navigate(["listar"])    
   }
   
   nuevo(){
-
   }
 }

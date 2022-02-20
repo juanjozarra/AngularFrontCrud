@@ -9,19 +9,30 @@ import { EditComponent } from './Persona/edit/edit.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceService } from './Service/service.service';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button'
+import { MatIconModule } from '@angular/material/icon'
+import {MatTableModule} from '@angular/material/table';
+import { DialogConfirmComponent } from './dialog-confirm/dialog-confirm.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListarComponent,
     AddComponent,
-    EditComponent
+    EditComponent,
+    DialogConfirmComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatTableModule
+
   ],
   providers: [ServiceService],
   bootstrap: [AppComponent]

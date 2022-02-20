@@ -9,7 +9,9 @@ import { ServiceService } from 'src/app/Service/service.service';
   styleUrls: ['./listar.component.css'],
 })
 export class ListarComponent implements OnInit {
-  personas: Persona[] | undefined;
+  personas: Persona[] = [];
+  displayedColumns: string[] = ['id','nombre', 'apellido', 'email', 'telefono','acciones'];
+
   constructor(private service: ServiceService, private router: Router) {}
 
   ngOnInit(): void {
@@ -20,5 +22,8 @@ export class ListarComponent implements OnInit {
 
   deleteUser(id: number){    
     this.service.deleteUser(id).subscribe();    
+  }
+
+  nuevo(){    
   }
 }
