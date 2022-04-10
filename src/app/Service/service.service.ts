@@ -16,6 +16,6 @@ export class ServiceService {
   }
 
   deleteUser(id: number) {    
-    return this.http.delete('/api/user/' + id);
+    return this.http.delete('/api/delete/user/' + id);
   }
 }

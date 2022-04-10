@@ -11,19 +11,19 @@ import { ServiceService } from 'src/app/Service/service.service';
 export class ListarComponent implements OnInit {
   personas: Persona[] = [];
   displayedColumns: string[] = ['id','nombre', 'apellido', 'email', 'telefono','acciones'];
+  loading: boolean = false;
 
   constructor(private service: ServiceService, private router: Router) {}
 
   ngOnInit(): void {
     this.service.getPersonas().subscribe((data) => {
       this.personas = data;
+      this.loading = true;
     });
   }
 
   deleteUser(id: number){    
     this.service.deleteUser(id).subscribe();    
-  }
-
-  nuevo(){    
+    location.reload();
   }
 }

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogNewUserComponent } from './dialog-new-user/dialog-new-user.component';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +12,9 @@ export class AppComponent {
   title = 'crud';
 
   constructor(
-    private router:Router   
+    private router:Router,
+    private dialog:MatDialog
+       
     ){    
   }
 
@@ -19,5 +23,6 @@ export class AppComponent {
   }
   
   nuevo(){
+    this.dialog.open(DialogNewUserComponent, {width: '30%', data: {update:false}})
   }
 }

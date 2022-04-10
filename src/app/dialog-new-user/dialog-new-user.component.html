@@ -1,0 +1,34 @@
+<h1 class="text-center" mat-dialog-title>{{ data.update ? 'Update user' : 'New user'}}</h1>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="d-flex flex-column align-items-center">
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Enter your name" formControlName="name">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Surname</mat-label>
+                <input matInput placeholder="Enter your surname" formControlName="surname">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="example@gmail.com" formControlName="email">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Cell-phone</mat-label>
+                <input matInput placeholder="+54 9 2344 50 9812" formControlName="cellPhone">
+            </mat-form-field>
+        </div>
+
+        <div class="col d-flex justify-content-center">
+            <button mat-raised-button type="button" color="warn" class="me-1" (click)="cancelClick()">Cancel</button>
+            <button mat-raised-button type="submit" color="primary" class="ms-1">Confirm</button>
+        </div>
+        
+    </div>
+</form>
+
+
+
+

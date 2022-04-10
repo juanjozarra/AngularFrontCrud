@@ -8,12 +8,16 @@ import { AddComponent } from './Persona/add/add.component';
 import { EditComponent } from './Persona/edit/edit.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceService } from './Service/service.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button'
 import { MatIconModule } from '@angular/material/icon'
 import {MatTableModule} from '@angular/material/table';
 import { DialogConfirmComponent } from './dialog-confirm/dialog-confirm.component';
+import { DialogNewUserComponent } from './dialog-new-user/dialog-new-user.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input'
 
 @NgModule({
   declarations: [
@@ -21,7 +25,8 @@ import { DialogConfirmComponent } from './dialog-confirm/dialog-confirm.componen
     ListarComponent,
     AddComponent,
     EditComponent,
-    DialogConfirmComponent
+    DialogConfirmComponent,
+    DialogNewUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,8 +36,11 @@ import { DialogConfirmComponent } from './dialog-confirm/dialog-confirm.componen
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,
-    MatTableModule
-
+    MatTableModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatInputModule
   ],
   providers: [ServiceService],
   bootstrap: [AppComponent]
