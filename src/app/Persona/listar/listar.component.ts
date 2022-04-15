@@ -10,13 +10,13 @@ import { ServiceService } from 'src/app/Service/service.service';
 })
 export class ListarComponent implements OnInit {
   personas: Persona[] = [];
-  displayedColumns: string[] = ['id','nombre', 'apellido', 'email', 'telefono','acciones'];
+  displayedColumns: string[] = ['nombre', 'apellido', 'email', 'telefono','acciones'];
   loading: boolean = false;
 
-  constructor(private service: ServiceService, private router: Router) {}
+  constructor(private service: ServiceService) {}
 
   ngOnInit(): void {
-    this.service.getPersonas().subscribe((data) => {
+    this.service.getUsers().subscribe((data) => {
       this.personas = data;
       this.loading = true;
     });

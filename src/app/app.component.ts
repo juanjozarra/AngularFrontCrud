@@ -23,6 +23,6 @@ export class AppComponent {
   }
   
   nuevo(){
-    this.dialog.open(DialogNewUserComponent, {width: '30%', data: {update:false}})
+    this.dialog.open(DialogNewUserComponent, {width: '400px', data: {update:false}})
   }
 }

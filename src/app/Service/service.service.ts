@@ -11,11 +11,18 @@ export class ServiceService {
   constructor(private http:HttpClient) {
   }
 
-  getPersonas():Observable<any>{
-    return this.http.get<Persona>('/api/usuarios'); 
+  getUsers():Observable<any>{
+    return this.http.get<Persona>('/api/users'); 
   }
 
   deleteUser(id: number) {    
     return this.http.delete('/api/delete/user/' + id);
   }
+
+  addUser(data: string){
+    console.log(data)
+    return this.http.post<any>('/api/add/user', data);
+  }
+
+  
 }
