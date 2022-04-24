@@ -40,9 +40,11 @@ export class DialogNewUserComponent implements OnInit {
   }
 
   onSubmit(){
-    this.data.update ? this.service.editUser(this.form.value).subscribe() : this.service.addUser(this.form.value).subscribe()
-    this.dialogRef.close();
-    location.reload();
+    if(this.form.valid){
+      this.data.update ? this.service.editUser(this.form.value).subscribe() : this.service.addUser(this.form.value).subscribe()
+      this.dialogRef.close();
+      location.reload();
+    }
   }
 
   cancelClick(): void {

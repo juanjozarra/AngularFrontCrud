@@ -6,14 +6,20 @@
             <mat-form-field appearance="outline">
                 <mat-label>Name</mat-label>
                 <input matInput placeholder="Enter your name" formControlName="nombre">
+                <mat-error *ngIf="form.get('nombre')?.hasError('pattern')">Please only letters</mat-error>
+                <mat-error *ngIf="form.get('nombre')?.hasError('required')">Name is <b>required</b></mat-error>  
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>Surname</mat-label>
                 <input matInput placeholder="Enter your surname" formControlName="apellido">
+                <mat-error *ngIf="form.get('apellido')?.hasError('pattern')">Please only letters</mat-error>
+                <mat-error *ngIf="form.get('apellido')?.hasError('required')">Surname is <b>required</b></mat-error>  
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>Email</mat-label>
                 <input matInput placeholder="example@gmail.com" formControlName="email">
+                <mat-error *ngIf="form.get('email')?.hasError('email')">Please enter a valid email</mat-error>
+                <mat-error *ngIf="form.get('email')?.hasError('required')">Email is <b>required</b></mat-error>                          
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>Cell-phone</mat-label>

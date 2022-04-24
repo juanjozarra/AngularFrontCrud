@@ -20,11 +20,18 @@ export class AppComponent {
   }
 
   listar(){
-    this.listado=true;
     this.router.navigate(["listar"])    
   }
   
   nuevo(){
     this.dialog.open(DialogNewUserComponent, {width: '400px', data: {update:false}})
+  }
+
+  routeHome(){
+    return this.router.url === '/'
+  }
+
+  routeList(){
+    return this.router.url === '/listar'
   }
 }
