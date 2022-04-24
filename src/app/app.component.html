@@ -4,8 +4,8 @@
         <img width="150" src="../assets/images/download.png" alt="Angular logo" />
     </div>
     <div class="d-flex justify-content-center">   
-        <button mat-raised-button color="primary" class="me-2" (click)="listar()"><mat-icon>list</mat-icon></button>
-        <button mat-raised-button color="success" (click)="nuevo()"><mat-icon>add</mat-icon></button>       
+        <button mat-raised-button color="primary" matTooltip="List users" *ngIf="!listado" (click)="listar()"><mat-icon>list</mat-icon></button>
+        <button mat-raised-button color="success" matTooltip="New user" *ngIf="listado" (click)="nuevo()"><mat-icon>add</mat-icon></button>       
     </div>
 </div>
 

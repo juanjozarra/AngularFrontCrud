@@ -5,3 +5,8 @@ table.table td {
 table {
     width: 100%;
 }
+
+.centered {
+    width: 100%;
+    margin: auto;
+}

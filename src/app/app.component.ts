@@ -10,6 +10,7 @@ import { DialogNewUserComponent } from './dialog-new-user/dialog-new-user.compon
 })
 export class AppComponent {
   title = 'crud';
+  listado: boolean = false;
 
   constructor(
     private router:Router,
@@ -19,6 +20,7 @@ export class AppComponent {
   }
 
   listar(){
+    this.listado=true;
     this.router.navigate(["listar"])    
   }
   

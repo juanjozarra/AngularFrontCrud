@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { TooltipPosition } from '@angular/material/tooltip';
+import { DialogNewUserComponent } from 'src/app/dialog-new-user/dialog-new-user.component';
 import { Persona } from 'src/app/Models/Persona';
 import { ServiceService } from 'src/app/Service/service.service';
 
@@ -12,8 +14,13 @@ export class ListarComponent implements OnInit {
   personas: Persona[] = [];
   displayedColumns: string[] = ['nombre', 'apellido', 'email', 'telefono','acciones'];
   loading: boolean = false;
+  right: TooltipPosition='right'
+  left: TooltipPosition='left'
 
-  constructor(private service: ServiceService) {}
+  constructor(
+    private service: ServiceService,
+    private dialog: MatDialog
+    ) {}
 
   ngOnInit(): void {
     this.service.getUsers().subscribe((data) => {
@@ -25,5 +32,9 @@ export class ListarComponent implements OnInit {
   deleteUser(id: number){    
     this.service.deleteUser(id).subscribe();    
     location.reload();
+  }
+
+  editUser(person: Persona){
+    this.dialog.open(DialogNewUserComponent, {width: '400px', data: {update:true, user:person}})
   }
 }

@@ -29,10 +29,20 @@ export class DialogNewUserComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    if(this.data.update){
+      this.form.addControl('id', new FormControl(this.data.user.id, Validators.required))
+      this.form.controls['nombre'].setValue(this.data.user.nombre);
+      this.form.controls['apellido'].setValue(this.data.user.apellido);
+      this.form.controls['email'].setValue(this.data.user.email);
+      this.form.controls['telefono'].setValue(this.data.user.telefono);
+      
+    }
   }
 
   onSubmit(){
-    this.service.addUser(this.form.value).subscribe();
+    this.data.update ? this.service.editUser(this.form.value).subscribe() : this.service.addUser(this.form.value).subscribe()
+    this.dialogRef.close();
+    location.reload();
   }
 
   cancelClick(): void {

@@ -20,8 +20,11 @@ export class ServiceService {
   }
 
   addUser(data: string){
-    console.log(data)
     return this.http.post<any>('/api/add/user', data);
+  }
+
+  editUser(data: string){
+    return this.http.patch<any>('/api/edit/user', data)
   }
 
   
