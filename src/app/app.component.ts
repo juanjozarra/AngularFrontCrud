@@ -27,6 +27,10 @@ export class AppComponent {
     this.dialog.open(DialogNewUserComponent, {width: '400px', data: {update:false}})
   }
 
+  volver(){
+    this.router.navigate(["/"])
+  }
+
   routeHome(){
     return this.router.url === '/'
   }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { TooltipPosition } from '@angular/material/tooltip';
+import { DialogConfirmComponent } from 'src/app/dialog-confirm/dialog-confirm.component';
 import { DialogNewUserComponent } from 'src/app/dialog-new-user/dialog-new-user.component';
 import { Persona } from 'src/app/Models/Persona';
 import { ServiceService } from 'src/app/Service/service.service';
@@ -30,8 +31,12 @@ export class ListarComponent implements OnInit {
   }
 
   deleteUser(id: number){    
-    this.service.deleteUser(id).subscribe();    
-    location.reload();
+    const dialog = this.dialog.open(DialogConfirmComponent)
+    dialog.afterClosed().subscribe(result =>
+      {if(result){
+        this.service.deleteUser(id).subscribe();
+        location.reload();
+      }})
   }
 
   editUser(person: Persona){

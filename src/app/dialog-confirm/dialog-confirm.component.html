@@ -1,1 +1,8 @@
-<p>dialog-confirm works!</p>
+<h3 mat-dialog-tittle>Confirmation</h3>
+<mat-dialog-content>
+    <p class="text-center mt-2 mat-typography">Are you sure?</p>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+    <button mat-raised-button color="warn" mat-dialog-close>No</button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="true">Yes</button>
+</mat-dialog-actions>
