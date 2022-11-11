@@ -24,6 +24,7 @@
             <mat-form-field appearance="outline">
                 <mat-label>Cell-phone</mat-label>
                 <input matInput placeholder="+54 9 2344 50 9812" autocomplete="off" formControlName="telefono">
+                <mat-error *ngIf="form.get('telefono')?.hasError('pattern')">Please enter a valid cell-phone number</mat-error>
             </mat-form-field>
         </div>
 

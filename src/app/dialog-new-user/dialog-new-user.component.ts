@@ -19,7 +19,7 @@ export class DialogNewUserComponent implements OnInit {
     nombre: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z ]+$/)]),
     apellido: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z ]+$/)]),
     email: new FormControl('', [Validators.required, Validators.email]),
-    telefono: new FormControl('',)
+    telefono: new FormControl('',[Validators.pattern(/^[0-9+ ]+$/)])
   }) ;
 
   constructor(
